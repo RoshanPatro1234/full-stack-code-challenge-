@@ -1,0 +1,24 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import AdminDashboard from './pages/AdminDashboard';
+import UserStoreList from './pages/UserStoreList';
+import StoreOwnerDashboard from './pages/StoreOwnerDashboard';
+
+function App() {
+  const user = JSON.parse(localStorage.getItem('user')); // Simple auth state
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        
+        {/* Protected Routes based on Role */}
+        <Route path="/admin" element={user?.role === 'ADMIN' ? <AdminDashboard /> : <Navigate to="/login" />} />
+        <Route path="/stores" element={user?.role === 'USER' ? <UserStoreList /> : <Navigate to="/login" />} />
+        <Route path="/owner" element={user?.role === 'STORE_OWNER' ? <StoreOwnerDashboard /> : <Navigate to="/login" />} />
+        
+        <Route path="/" element={<Navigate to="/login" />} />
+      </Routes>
+    </Router>
+  );
+}

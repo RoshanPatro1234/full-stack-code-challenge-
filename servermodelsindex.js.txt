@@ -1,0 +1,12 @@
+fullstack-challenge/
+├── server/                # Express.js Backend
+│   ├── models/            # Database Schemas
+│   ├── routes/            # API Endpoints
+│   ├── middleware/        # Auth & Validation
+│   └── index.js           # Entry point
+├── client/                # React.js Frontend
+│   ├── src/
+│   │   ├── components/    # Reusable UI
+│   │   ├── pages/         # Dashboard, Login, etc.
+│   │   └── App.js
+└── README.md

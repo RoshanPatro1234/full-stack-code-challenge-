@@ -1,0 +1,21 @@
+# FullStack Rating System
+
+## Setup Instructions
+
+### Backend
+1. Navigate to `/server`.
+2. Install dependencies: `npm install express sequelize pg pg-hstore dotenv joi jsonwebtoken bcrypt`.
+3. Create a `.env` file with your DB credentials.
+4. Run `node index.js`.
+
+### Frontend
+1. Navigate to `/client`.
+2. Install dependencies: `npm install axios react-router-dom lucide-react`.
+3. Run `npm start`.
+
+### Features Implemented
+- **Auth:** JWT Login/Signup with role redirection.
+- **Validations:** Regex for password (8-16 chars, Uppercase, Special char), Name (20-60 chars).
+- **Admin:** Stats dashboard, Filterable/Sortable user & store tables.
+- **Normal User:** Store search and Rating system (1-5 stars).
+- **Store Owner:** View average ratings and list of users who rated them.
